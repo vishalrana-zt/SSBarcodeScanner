@@ -47,8 +47,8 @@ import UIKit
     
     public init() {
         // Find the resource bundle dynamically
-        // let bundle = Bundle(for: SSBarCodeScanner.self)
-        let bundle = Bundle.module.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
+        let bundle = Bundle(for: SSBarCodeScanner.self)
+       // let bundle = Bundle.module.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
         super.init(nibName: "SSBarCodeScanner", bundle: bundle)
        
     }
