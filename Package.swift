@@ -18,7 +18,7 @@ let package = Package(
         .target(
             name: "SSBarcodeScanner",
             resources: [
-                .process("Resources")
+                .process("Resources/SSBarCodeScanner.xib")
             ]
         ),
         .testTarget(
