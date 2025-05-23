@@ -27,7 +27,7 @@ import UIKit
 @objc public class SSBarCodeScanner: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var videoPreviewView: UIView!
-    @IBOutlet weak var squareView: SSBarCodeSquareView!
+    @IBOutlet weak var squareView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var switchCameraButton: UIButton!
@@ -47,10 +47,9 @@ import UIKit
     
     public init() {
         // Find the resource bundle dynamically
-      //  let bundle = Bundle(for: SSBarCodeScanner.self)
-       // let bundle = Bundle.module.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)
-      // super.init(nibName: "SSBarCodeScanner", bundle: bundle)
-       super.init(nibName: "SSBarCodeScanner", bundle: Bundle.module)       
+
+//       let bundle = Bundle(for: SSBarCodeScanner.self)
+        super.init(nibName: "SSBarCodeScanner", bundle: Bundle.module)
     }
     
     required init?(coder: NSCoder) {
@@ -62,6 +61,25 @@ import UIKit
         setupCaptureSession()
         setupUI()
         addButtons()
+        let middleView = SSBarCodeSquareView()
+        middleView.translatesAutoresizingMaskIntoConstraints = false
+        middleView.sizeMultiplier = 0.4
+        middleView.lineColor = .white
+        middleView.lineWidth = 3
+
+        self.view.addSubview(middleView)
+
+        // Add constraints to match squareView's size and position
+        NSLayoutConstraint.activate([
+            middleView.centerXAnchor.constraint(equalTo: squareView.centerXAnchor),
+            middleView.centerYAnchor.constraint(equalTo: squareView.centerYAnchor),
+            middleView.widthAnchor.constraint(equalTo: squareView.widthAnchor),
+            middleView.heightAnchor.constraint(equalTo: squareView.heightAnchor)
+        ])
+
+        // Trigger drawing
+        middleView.setNeedsDisplay()
+        
         NotificationCenter.default
             .removeObserver(
                 self,
