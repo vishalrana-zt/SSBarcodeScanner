@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,8 +38,8 @@
                         <constraint firstAttribute="width" constant="250" id="Vo2-bf-et1"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pB-EQ-HPk">
-                    <rect key="frame" x="176.33333333333334" y="566" width="40.666666666666657" height="19.333333333333371"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pB-EQ-HPk">
+                    <rect key="frame" x="20" y="566" width="353" height="19.333333333333371"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -109,8 +108,10 @@
                 <constraint firstItem="e9X-ZD-3Gn" firstAttribute="top" secondItem="XbY-pr-kaG" secondAttribute="top" id="eDW-W2-xy6"/>
                 <constraint firstItem="e9X-ZD-3Gn" firstAttribute="leading" secondItem="XbY-pr-kaG" secondAttribute="leading" id="ebp-hU-Vmq"/>
                 <constraint firstItem="w4d-Dr-6TS" firstAttribute="top" secondItem="PTt-UG-8bx" secondAttribute="top" constant="10" id="fg8-UV-nlK"/>
+                <constraint firstItem="6pB-EQ-HPk" firstAttribute="leading" secondItem="PTt-UG-8bx" secondAttribute="leading" constant="20" id="fzi-0v-OF2"/>
                 <constraint firstItem="aYQ-xK-oPE" firstAttribute="leading" secondItem="PTt-UG-8bx" secondAttribute="leading" constant="20" id="giK-WS-5Ac"/>
                 <constraint firstItem="DmY-G7-PPm" firstAttribute="centerY" secondItem="aYQ-xK-oPE" secondAttribute="centerY" id="jbk-t1-FTO"/>
+                <constraint firstItem="PTt-UG-8bx" firstAttribute="trailing" secondItem="6pB-EQ-HPk" secondAttribute="trailing" constant="20" id="jpO-Ff-RMo"/>
                 <constraint firstItem="g4V-YY-4Bp" firstAttribute="centerY" secondItem="DmY-G7-PPm" secondAttribute="centerY" id="meB-VK-wfF"/>
                 <constraint firstItem="PTt-UG-8bx" firstAttribute="trailing" secondItem="DmY-G7-PPm" secondAttribute="trailing" constant="20" id="uP3-D8-Y1s"/>
                 <constraint firstItem="PTt-UG-8bx" firstAttribute="trailing" secondItem="w4d-Dr-6TS" secondAttribute="trailing" constant="20" id="ynO-MQ-Qfc"/>
