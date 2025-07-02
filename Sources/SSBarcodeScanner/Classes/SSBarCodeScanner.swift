@@ -147,7 +147,7 @@ import UIKit
         if #available(iOS 10.0, *) {
             guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
                 delegate?
-                    .qrScannerDidFail(self, error: "No back camera available.")
+                    .qrScannerDidFail(self, error: self.localize("barcode_no_back_camera"))
                 return
             }
             currentDevice = captureDevice
@@ -266,7 +266,7 @@ import UIKit
         let newCameraPosition: AVCaptureDevice.Position = currentInput.device.position == .back ? .front : .back
         if #available(iOS 10.0, *) {
             guard let newDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: newCameraPosition) else {
-                delegate?.qrScannerDidFail(self, error: "Camera not available.")
+                delegate?.qrScannerDidFail(self, error: self.localize("barcode_no_main_camera"))
                 captureSession.commitConfiguration()
                 return
             }
@@ -289,7 +289,7 @@ import UIKit
     public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
               let stringValue = metadataObject.stringValue else {
-            delegate?.qrScannerDidFail(self, error: "Could not read QR code.")
+            delegate?.qrScannerDidFail(self, error: self.localize("barcode_qr_code_error"))
             return
         }
         
